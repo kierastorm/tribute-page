@@ -1,112 +1,64 @@
 /*--Remember the cascade: Later styles override earlier ones and more specific styles override more general ones.--*/
 body {
   color: #444;
-  font-size: 16px;
+  font-size: 22px;
   font-family: 'Staatliches', cursive;
   display: center;
 }
 p {
   margin-bottom: .67em;
 }
-nav, footer {
-  background-color: white;
-}
-footer {
-  text-align: center;
-  padding: 1em 0 .3em 0;
-  color: #45;
-}
+
+
 /*-- Main Menu Styles--*/
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: white;
-  text-decoration: Lato
-}
-
-
 nav ul {
-
   display: flex;
-  flex-direction: auto;
-  color: #ADD8E6;
+  flex-direction: row;
+  color: #FFA537;
   justify-content: space-around;
   padding: 14px 16px;
   text-decoration: Lato;
   margin-left: auto;
   margin-right: auto;
+  background-color: #FF6737;
+  font-size: 20px;
+
 }
+nav a:link, nav a:visited {
+  color: #FFA537;
+  text-decoration: bold;
+}
+nav a:hover, nav a:active  {
+  color: #FFA537;
+  text-decoration: underline;
+}
+nav a.active {
+  color: #FFA537;
+}
+
+
+
 /*--Grid Styles--*/
 .grid-container {
   border: 3px ;
   padding: 1em;
-
   display: grid;
   grid-gap: 1em 2em;
   grid-template-columns: repeat(3, 1fr);
 }
-/*-- Old Layout Method
-.grid-item {
-  display: inline-block;
-  width: 31.5%;
-  margin-right: 1em;
-}--*/
+/*-- changes .hero-copy and article width on small screens --*/
+@media screen and (max-width: 767px) {
+  .hero-copy {width: 96%;}
+  article {width: 96%;}
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
 .grid-item {
   border: 2px solid white;
   padding: .5em;
   background-color: white;
 }
-
-.grid-container {
-  grid-template-areas:
-                      "head head head"
-                      "feat1 feat2 feat3"
-                      "wall blog1 blog1"
-                      "wall blog2 blog2"
-                      "wall blog3 blog3"
-                      "wall blog4 blog4"
-                      "close1 close1 close2"
-                      "foot foot foot";
-}
-.one {
-  grid-area: head;
-}
-.two {
-  grid-area: feat1;
-}
-.three {
-  grid-area: feat2;
-}
-.four {
-  grid-area: feat3;
-}
-.five {
-  grid-area: wall;
-}
-.six {
-  grid-area: blog1;
-}
-.seven {
-  grid-area: blog2;
-}
-.eight {
-  grid-area: blog3;
-}
-.nine {
-  grid-area: blog4;
-}
-.ten {
-  grid-area: close1;
-}
-.eleven {
-  grid-area: close2;
-}
-.twelve {
-  grid-area: foot;
-}
-
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #3c3c3c;
@@ -123,20 +75,20 @@ nav a.active {
   color: #F0F0F0;
 }
 /*-- Hero Unit Styles--*/
-header {
+.hero-copy {
   width: 300px;
   margin: 2em auto;
 }
-header img {
+.hero-copy img {
   width: 100%;
   margin:0 auto;
 }
-header h1 {
+.hero-copy h1 {
   margin: 0 auto;
   padding: 0 auto;
   text-align: center;
 }
-header .small {
+.hero-copy .small {
   margin-top: 1em;
   font-size: 20px
 }
@@ -155,6 +107,12 @@ article figure {
 article figcaption {
     font-size: 20px
 }
+
+.four{
+      display: flex;
+      justify-content: center;
+}
+
 .pagination {
   margin: 2em auto;
   width: 96%;
@@ -176,9 +134,17 @@ a.button:hover, a.button:active {
   text-decoration: none;
   color: #222;
 }
-
-/*-- changes header and article width on small screens --*/
-@media screen and (max-width: 768px) {
-  header {width: 96%;}
-  article {width: 96%;}
+.feat3 h4 {
+  font-size: 2.5em;
+}
+.text {
+}
+.foot {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #FF6737;
+  text-align: center;
 }
